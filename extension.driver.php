@@ -1,6 +1,7 @@
 <?php
 	
 	require_once EXTENSIONS . '/respondhd/lib/hdapi/hdbase.php';
+	require_once EXTENSIONS . '/respondhd/lib/class.hdapi_respondhd.php';
 	
 	class Extension_RespondHD extends Extension {
 		
@@ -28,25 +29,9 @@
 					'page'		=> '/system/preferences/',
 					'delegate'	=> 'AddCustomPreferenceFieldsets',
 					'callback'	=> 'appendPreferences'
-				),
-				array(
-					'page' => '/system/preferences/',
-					'delegate' => 'Save',
-					'callback' => '__SavePreferences'
 				)
 			);
 		}
-		
-		/*public function __SavePreferences(){
-			$settings = $_POST['settings'];
-			
-			$setting_group = 'respondhd';
-			$setting_name = 'hdsecret';
-			$setting_value = $settings['general']['hdsecret'];
-			
-			Symphony::Configuration()->set($setting_name, $setting_value, $setting_group);
-			Administration::instance()->saveConfig();
-		}*/
 		
 		public function appendPreferences($context) {
 			$group = new XMLElement('fieldset');
@@ -66,6 +51,15 @@
 			$group->appendChild($label);
 			
 			$context['wrapper']->appendChild($group);
+		}
+		
+		public function initialize() {
+			$hd = new HandsetDetection_RespondHD();
+			$hd->detectInit();
+			$ret = $hd->detectAll('product_info, ajax, markup, display, rss');
+			if ($ret) {
+				$data = $hd->getDetect();
+			}
 		}
 		
 	}
