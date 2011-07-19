@@ -54,13 +54,18 @@
 		}
 		
 		public function initialize() {
-			$hd = new HandsetDetection_RespondHD();
+			
+			$conf = Symphony::Configuration()->get('respondhd');
+			//echo '<pre>' . print_r($conf) . '</pre>';
+			
+			
+			/*$hd = new HandsetDetection_RespondHD();
 			$hd->setup();
 			$ret = $hd->detectAll('product_info, ajax, markup, display, rss');
 			if ($ret) {
 				$data = $hd->getDetect();
 			}
-			echo '<pre>' . print_r($data) . '</pre>';
+			echo '<pre>' . print_r($data) . '</pre>';*/
 			// $result
 		}
 		
