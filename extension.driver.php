@@ -1,6 +1,6 @@
 <?php
 	
-	//require_once EXTENSIONS . '/respondhd/lib/.php';
+	require_once EXTENSIONS . '/respondhd/lib/hdapi/hdbase.php';
 	
 	class Extension_RespondHD extends Extension {
 		
