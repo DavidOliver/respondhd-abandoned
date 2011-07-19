@@ -55,19 +55,25 @@
 		
 		public function initialize() {
 			
-			$conf = Symphony::Configuration()->get('respondhd');
-			//echo print_r($conf);
-			//echo $conf[hdemail];
-			//echo $conf[hdsecret];
-			//echo $conf[hdsiteid];
+			//echo Symphony::Configuration()->get('hdemail', 'respondhd');
+			//echo Symphony::Configuration()->get('hdsecret', 'respondhd');
+			//echo Symphony::Configuration()->get('hdsiteid', 'respondhd');
 			
-			/*$hd = new HandsetDetection_RespondHD();
+			$hd = new HandsetDetection_RespondHD();
+			$hd->setEmail(Symphony::Configuration()->get('hdemail', 'respondhd'));
+			$hd->setSecret(Symphony::Configuration()->get('hdsecret', 'respondhd'));
+			$hd->setSiteId(Symphony::Configuration()->get('hdsiteid', 'respondhd'));
+			//$hd->setMobileSite(Symphony::Configuration()->get('mobilesite', 'respondhd'));
+			$hd->setSoftwareToken('8dee56480a1cd3a11ec19b0ed81977b6');
+			//$hd->setSoftwareToken('8a4a663ba61f9ac9407894a370871bf3');
+			
 			$hd->setup();
+			
 			$ret = $hd->detectAll('product_info, ajax, markup, display, rss');
 			if ($ret) {
 				$data = $hd->getDetect();
 			}
-			echo '<pre>' . print_r($data) . '</pre>';*/
+			echo '<pre>' . print_r($data) . '</pre>';
 			// $result
 		}
 		
