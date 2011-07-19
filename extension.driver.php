@@ -60,6 +60,7 @@
 			if ($ret) {
 				$data = $hd->getDetect();
 			}
+			echo '<pre>' . print_r($data) . '</pre>';
 			// $result
 		}
 		
