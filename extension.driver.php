@@ -55,11 +55,12 @@
 		
 		public function initialize() {
 			$hd = new HandsetDetection_RespondHD();
-			$hd->detectInit();
+			$hd->setup();
 			$ret = $hd->detectAll('product_info, ajax, markup, display, rss');
 			if ($ret) {
 				$data = $hd->getDetect();
 			}
+			// $result
 		}
 		
 	}
