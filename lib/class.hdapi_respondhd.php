@@ -1,13 +1,12 @@
 <?php
 class HandsetDetection_RespondHD extends HandsetDetection {
 	var $software_token = '';
+		
+	function __construct() {
+	}
 	
 	function HandsetDetection() {
 		
-		//parent::__construct();
-		//parent::HandsetDetection();
-		
-		// Set config based on Symphony Preferences
 		$this->setEmail('');
 		$this->setSecret('');
 		$this->setMobileSite('');
