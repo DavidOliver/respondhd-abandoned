@@ -10,7 +10,6 @@ class HandsetDetection_RespondHD extends HandsetDetection {
 		// Set config based on Symphony Preferences
 		$this->setEmail('');
 		$this->setSecret('');
-		$this->setSoftwareToken('');
 		$this->setMobileSite('');
 		$this->setSiteId('');
 		
