@@ -56,8 +56,10 @@
 		public function initialize() {
 			
 			$conf = Symphony::Configuration()->get('respondhd');
-			//echo '<pre>' . print_r($conf) . '</pre>';
-			
+			//echo print_r($conf);
+			//echo $conf[hdemail];
+			//echo $conf[hdsecret];
+			//echo $conf[hdsiteid];
 			
 			/*$hd = new HandsetDetection_RespondHD();
 			$hd->setup();
