@@ -1,6 +1,6 @@
 <?php
 class HandsetDetection_RespondHD extends HandsetDetection {
-	var $software_token = '';
+	var $software_token = '8dee56480a1cd3a11ec19b0ed81977b6';
 		
 	function __construct() {
 	}
