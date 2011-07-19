@@ -53,8 +53,16 @@
 			$group->setAttribute('class', 'settings');
 			$group->appendChild(new XMLElement('legend', __('Respond HD')));
 			
-			$label = Widget::Label(__('Handset Detection secret'));
+			$label = Widget::Label(__('Handset Detection Email'));
+			$label->appendChild(Widget::Input('settings[respondhd][hdemail]', $hdemail, 'text'));
+			$group->appendChild($label);
+			
+			$label = Widget::Label(__('Handset Detection Secret'));
 			$label->appendChild(Widget::Input('settings[respondhd][hdsecret]', $hdsecret, 'text'));
+			$group->appendChild($label);
+			
+			$label = Widget::Label(__('Handset Detection Site ID'));
+			$label->appendChild(Widget::Input('settings[respondhd][hdsiteid]', $hdsiteid, 'text'));
 			$group->appendChild($label);
 			
 			$context['wrapper']->appendChild($group);
